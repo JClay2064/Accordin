@@ -9,8 +9,11 @@ export const SingleQuestion = ({title, info}) => {
     <article className='question'>
       <header>
             <h4>{title}</h4>
+            <button className = 'question-btn' onClick = {() => setShowInfo(!showInfo)}>
+              {showInfo ? <AiOutlineMinus /> : <AiOutlinePlus />}
+            </button>
       </header>
-      <p>{info}</p>
+      {showInfo &&<p>{info}</p>}
     </article>
   )
 }
